@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import CategoryPage from './pages/CategoryPage';
 import Navbar from "./components/Navbar";
 import SignUp from './pages/Signup';
 import Login from './pages/Login';
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path='category/:categoryName' element={<CategoryPage />} />
         </Routes>
     </Router>
   );

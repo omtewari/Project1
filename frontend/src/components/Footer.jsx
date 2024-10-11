@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-gray-100 text-gray-700 py-8">
       <div className="max-w-screen-xl mx-auto px-4">
         {/* Container for all footer sections */}
-        <div className="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between md:space-x-16 space-y-6 md:space-y-0">
           {/* Logo and Description */}
           <div className="md:w-1/4">
             <h2 className="text-xl font-semibold mb-4">NAME</h2>

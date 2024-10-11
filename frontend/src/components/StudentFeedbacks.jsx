@@ -52,18 +52,6 @@ const FeedbackSection = () => {
         ))}
       </div>
 
-      {/* Call-to-Action Section */}
-      <div className="mt-12 bg-gradient-to-r from-blue-200 to-purple-300 p-8 rounded-lg text-center">
-        <h3 className="text-lg font-semibold mb-4">Let's Start With Academy LMS</h3>
-        <div className="flex justify-center space-x-4">
-          <button className="bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600">
-            I'm A Student
-          </button>
-          <button className="bg-white border-2 border-orange-500 text-orange-500 py-2 px-4 rounded-full hover:bg-orange-600 hover:text-white">
-            Become An Instructor
-          </button>
-        </div>
-      </div>
     </section>
   );
 };

@@ -18,10 +18,17 @@ const categories = [
 ];
 
 const Categories = () => {
-  const [visibleCategories, setVisibleCategories] = useState(10); // State to manage how many categories to show
-  const [showPopup, setShowPopup] = useState(false);
+  const [visibleCategories, setVisibleCategories] = useState(10); // Show only 8 initially
+  const [showAll, setShowAll] = useState(false); // State to manage Show All/Show Less
+  const [showPopup, setShowPopup] = useState(false); // State to manage the popup modal
 
-  // Function to toggle the popup
+  // Toggle Show All/Show Less categories
+  const toggleCategories = () => {
+    setShowAll(!showAll);
+    setVisibleCategories(showAll ? 10 : categories.length);
+  };
+
+  // Function to toggle the popup modal
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
@@ -38,19 +45,17 @@ const Categories = () => {
 
         {/* Buttons Section */}
         <div className="flex space-x-4">
-          {/* Show All Categories Button */}
-          {visibleCategories < categories.length && (
-            <button 
-              className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition duration-300" 
-              onClick={() => setVisibleCategories(categories.length)} // Show all categories on button click
-            >
-              Show All Categories
-            </button>
-          )}
+          {/* Show More/Less Button */}
+          <button
+            className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition duration-300"
+            onClick={toggleCategories}
+          >
+            {showAll ? 'Show Less' : 'Show More'}
+          </button>
 
-          {/* Button for All Categories Popup */}
-          <button 
-            className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition duration-300" 
+          {/* All Categories Popup Button */}
+          <button
+            className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition duration-300"
             onClick={togglePopup}
           >
             All Categories
@@ -60,13 +65,13 @@ const Categories = () => {
 
       {/* Categories Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {categories.slice(0, visibleCategories).map((category) => (
+        {categories.slice(0, visibleCategories).map((category, index) => (
           <Link
             to={category.path}
-            key={category.name}
+            key={index}
             className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center hover:shadow-lg transition-shadow duration-300"
           >
-            {/* Icon or Image */}
+            {/* Icon */}
             <div className="text-orange-500 text-4xl mb-4">
               {category.icon}
             </div>
@@ -81,10 +86,10 @@ const Categories = () => {
       {/* Popup Modal */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full relative max-h-[80vh] overflow-y-auto"> {/* Make the popup scrollable */}
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full relative max-h-[80vh] overflow-y-auto">
             {/* Close Button */}
-            <button 
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800" 
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
               onClick={togglePopup}
             >
               ✖
@@ -93,15 +98,15 @@ const Categories = () => {
             <h3 className="text-2xl font-semibold mb-4">All Categories</h3>
             {/* List of Categories */}
             <ul className="space-y-4">
-              {categories.map((category) => (
-                <li key={category.name} className="flex items-center space-x-4">
+              {categories.map((category, index) => (
+                <li key={index} className="flex items-center space-x-4">
                   {/* Icon */}
                   <span className="text-orange-500 text-2xl">{category.icon}</span>
                   {/* Link to Category Page */}
-                  <Link 
+                  <Link
                     to={category.path}
                     className="text-lg hover:underline"
-                    onClick={togglePopup} // Close popup on link click
+                    onClick={togglePopup} // Close popup when a link is clicked
                   >
                     {category.name}
                   </Link>

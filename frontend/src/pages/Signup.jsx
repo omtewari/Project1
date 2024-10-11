@@ -38,17 +38,21 @@ function Signup() {
   };
 
   return (
-    <div className="max-w-md mx-auto">
-      <h2 className="text-xl font-semibold mb-4">Sign Up</h2>
+    <div className=' gap-14 flex shadow-lg shadow-gray-400 justify-center align-center'>
+      <div className='   '>
+      <img className='w-auto h-auto ' src="https://frontends.udemycdn.com/components/auth/desktop-illustration-step-1-x1.webp" alt="" />
+      </div>
+    <div className=" max-w-lg w-full ">
+      <h2 className="text-xl font-semibold m-2 mb-4 font-serif underline">Sign Up</h2>
 
       {error && <p className="text-red-500">{error}</p>} {/* Show error if any */}
       {success && <p className="text-green-500">{success}</p>} {/* Show success if any */}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 h-auto">
         <div>
-          <label className="block mb-1">Name: </label>
+          <label className="block m-2 text-lg font-serif ">Name: </label>
           <input
-            className="w-full p-2 border rounded"
+            className="w-full p-4 border rounded shadow-md shadow-gray-400"
             type="text"
             name="username"
             value={formData.username}
@@ -57,9 +61,9 @@ function Signup() {
         </div>
 
         <div>
-          <label className="block mb-1">Email: </label>
+          <label className="block m-2 text-lg font-serif">Email: </label>
           <input
-            className="w-full p-2 border rounded"
+            className="w-full p-4 border rounded shadow-md shadow-gray-400"
             type="email"
             name="email"
             value={formData.email}
@@ -68,9 +72,9 @@ function Signup() {
         </div>
 
         <div>
-          <label className="block mb-1">Password: </label>
+          <label className="block m-2 text-lg font-serif">Password: </label>
           <input
-            className="w-full p-2 border rounded"
+            className="w-full p-4 border rounded shadow-md shadow-gray-400"
             type="password"
             name="password"
             value={formData.password}
@@ -79,9 +83,9 @@ function Signup() {
         </div>
 
         <div>
-          <label className="block mb-1">Role: </label>
+          <label className="block m-2 text-lg font-serif">Role: </label>
           <select
-            className="w-full p-2 border rounded"
+            className="w-full p-4 border rounded shadow-md shadow-gray-400"
             name="role"
             value={formData.role}
             onChange={handleChange}
@@ -91,10 +95,11 @@ function Signup() {
           </select>
         </div>
 
-        <button className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600" type="submit">
+        <button className="w-full my-10 bg-blue-400 text-white font-serif p-5 rounded hover:bg-blue-600 shadow-md shadow-gray-400" type="submit">
           Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 }

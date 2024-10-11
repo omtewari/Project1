@@ -1,7 +1,13 @@
+// src/pages/Blog.js
 import React from 'react';
 
 const Blog = () => {
-  return <div className="p-8">Check out our Blog!</div>;
+  return (
+    <div>
+      <h1>Blog Page</h1>
+      {/* Blog content goes here */}
+    </div>
+  );
 };
 
 export default Blog;

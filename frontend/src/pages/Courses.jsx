@@ -1,13 +1,14 @@
-// src/pages/Courses.js
-import React from 'react';
+import React, { useState } from 'react';
+import CourseList from '../course_compo/CourseList';
+import FilterSidebar from '../course_compo/FilterSidebar';
 
-const Courses = () => {
+function App() {
   return (
-    <div>
-      <h1>Courses Page</h1>
-      {/* Courses content goes here */}
+    <div className="flex bg-gray-100 min-h-screen p-5">
+      <FilterSidebar />
+      <CourseList />
     </div>
   );
-};
+}
 
-export default Courses;
+export default App;

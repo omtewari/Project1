@@ -7,7 +7,7 @@ const mockCourses = [
   {
     title: 'Create An LMS Website With LearnPress',
     instructor: 'DevAcademy',
-    duration: '2 weeks',
+    duration: '2',
     students:120,
     level: 'Beginner',
     lessons: 30,
@@ -19,7 +19,7 @@ const mockCourses = [
   {
     title: 'Advanced Photoshop Techniques',
     instructor: 'PhotoMastery',
-    duration: '1 week',
+    duration: '1',
     students:120,
     level: 'Beginner',
     lessons: 15,
@@ -31,7 +31,7 @@ const mockCourses = [
   {
     title: 'React.js for Beginners',
     instructor: 'CodeAcademy',
-    duration: '3 weeks',
+    duration: '3',
     students:120,
     level: 'Intermediate',
     lessons: 25,
@@ -43,7 +43,7 @@ const mockCourses = [
   {
     title: 'Mastering Data Science',
     instructor: 'DataGenius',
-    duration: '4 weeks',
+    duration: '4',
     students:120,
     level: 'Intermediate',
     lessons: 40,
@@ -55,7 +55,7 @@ const mockCourses = [
   {
     title: 'UI/UX Design Essentials',
     instructor: 'DesignHub',
-    duration: '2 weeks',
+    duration: '2',
     students:120,
     level: 'Expert',
     lessons: 20,
@@ -67,7 +67,7 @@ const mockCourses = [
   {
     title: 'JavaScript Essentials',
     instructor: 'CodeAcademy',
-    duration: '2 weeks',
+    duration: '2',
     students:120,
     level: 'Expert',
     lessons: 18,
@@ -79,7 +79,7 @@ const mockCourses = [
   {
     title: 'Digital Marketing Masterclass',
     instructor: 'MarketingPros',
-    duration: '3 weeks',
+    duration: '3',
     students:120,
     level: 'Expert',
     lessons: 22,
@@ -91,7 +91,7 @@ const mockCourses = [
   {
     title: 'Machine Learning with Python',
     instructor: 'AI Academy',
-    duration: '5 weeks',
+    duration: '5',
     students:120,
     level: 'Expert',
     lessons: 45,
@@ -100,10 +100,70 @@ const mockCourses = [
     category: 'Data Science',
     thumbnail: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQmgrQD6yoolICzIxJKZnXB7XQXmgZBjV-VSRRfS3u5FHdh7Ei',
   },
-  // Add more courses if needed
+  {
+    title: 'Machine Learning with Python',
+    instructor: 'AI Academy',
+    duration: '5',
+    students:120,
+    level: 'Expert',
+    lessons: 45,
+    price: '400',
+    rating: 4.8,
+    category: 'Data Science',
+    thumbnail: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQmgrQD6yoolICzIxJKZnXB7XQXmgZBjV-VSRRfS3u5FHdh7Ei',
+  },
+  {
+    title: 'Machine Learning with Python',
+    instructor: 'AI Academy',
+    duration: '5',
+    students:120,
+    level: 'Expert',
+    lessons: 45,
+    price: '400',
+    rating: 4.8,
+    category: 'Data Science',
+    thumbnail: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQmgrQD6yoolICzIxJKZnXB7XQXmgZBjV-VSRRfS3u5FHdh7Ei',
+  },
+  {
+    title: 'Machine Learning with Python',
+    instructor: 'AI Academy',
+    duration: '5',
+    students:120,
+    level: 'Expert',
+    lessons: 45,
+    price: '400',
+    rating: 4.8,
+    category: 'Data Science',
+    thumbnail: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQmgrQD6yoolICzIxJKZnXB7XQXmgZBjV-VSRRfS3u5FHdh7Ei',
+  },
+  {
+    title: 'Machine Learning with Python',
+    instructor: 'AI Academy',
+    duration: '5',
+    students:120,
+    level: 'Expert',
+    lessons: 45,
+    price: '400',
+    rating: 4.8,
+    category: 'Data Science',
+    thumbnail: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQmgrQD6yoolICzIxJKZnXB7XQXmgZBjV-VSRRfS3u5FHdh7Ei',
+  },
+  {
+    title: 'Machine Learning with Python',
+    instructor: 'AI Academy',
+    duration: '5',
+    students:120,
+    level: 'Expert',
+    lessons: 45,
+    price: '400',
+    rating: 4.8,
+    category: 'Data Science',
+    thumbnail: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQmgrQD6yoolICzIxJKZnXB7XQXmgZBjV-VSRRfS3u5FHdh7Ei',
+  },
+    // Add more courses if needed
 ];
 
-const COURSES_PER_PAGE = 6;
+const COURSES_PER_PAGE = 12;
 
 function CourseList() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -123,7 +183,7 @@ function CourseList() {
   return (
     <div className="w-3/4 ml-5">
       <h1 className="text-2xl font-bold mb-6">All Courses</h1>
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentCourses.map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}

@@ -2,11 +2,11 @@ import React from 'react';
 
 const FilterSidebar = () => {
   return (
-    <div className="w-full md:w-1/4 p-5 bg-white rounded-lg shadow-lg">
+    <div className="w-full md:w-1/5 p-3 bg-white rounded-lg shadow-lg">
       <h2 className="text-lg font-bold mb-4 border-b pb-2">Course Category</h2>
       <div className="mb-6">
         {['Commercial', 'Office', 'Shop', 'Educate', 'Academy', 'Single family home', 'Studio', 'University'].map((category, index) => (
-          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-2">
+          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-1">
             <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               {category}
@@ -19,7 +19,7 @@ const FilterSidebar = () => {
       <h2 className="text-lg font-bold mb-4 border-b pb-2">Instructors</h2>
       <div className="mb-6">
         {['Kenny White', 'John Doe'].map((instructor, index) => (
-          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-2">
+          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-1">
             <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               {instructor}
@@ -32,7 +32,7 @@ const FilterSidebar = () => {
       <h2 className="text-lg font-bold mb-4 border-b pb-2">Price</h2>
       <div className="mb-6">
         {['All', 'Free', 'Paid'].map((price, index) => (
-          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-2">
+          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-1">
             <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               {price}
@@ -45,7 +45,7 @@ const FilterSidebar = () => {
       <h2 className="text-lg font-bold mb-4 border-b pb-2">Review</h2>
       <div className="mb-6">
         {[5, 4, 3, 2, 1].map((stars) => (
-          <div key={stars} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-2">
+          <div key={stars} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-1">
             <div className="flex items-center">
               {[...Array(stars)].map((_, i) => (
                 <span key={i} className="text-yellow-500">&#9733;</span>
@@ -62,7 +62,7 @@ const FilterSidebar = () => {
       <h2 className="text-lg font-bold mb-4 border-b pb-2">Level</h2>
       <div className="mb-6">
         {['All levels', 'Beginner', 'Intermediate', 'Expert'].map((level, index) => (
-          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-2">
+          <div key={index} className="flex items-center justify-between mb-2 hover:bg-gray-100 transition-colors rounded p-1">
             <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               {level}
